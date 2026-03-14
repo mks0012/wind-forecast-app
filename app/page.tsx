@@ -7,7 +7,7 @@ import { filterForecasts, DataPoint } from '@/lib/utils';
 
 export default function ForecastApp() {
   const [horizon, setHorizon] = useState(4);
-  // Default range: First 3 days of Jan 2024
+  
   const [startTime, setStartTime] = useState("2024-01-01T00:00");
   const [endTime, setEndTime] = useState("2024-01-04T00:00");
   
