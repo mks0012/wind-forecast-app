@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UK Wind Forecast Monitoring & Analysis
 
-## Getting Started
+A comprehensive dashboard and analytical suite built to evaluate national-level wind power generation forecasts in the UK for January 2024.
 
-First, run the development server:
+## 🚀 Live Demo
+- **App Link:** [Insert your Vercel/Heroku URL here]
+- **Demo Video:** [Insert your Unlisted YouTube Link here]
 
-```bash
+## 🛠 Tech Stack
+- **Frontend:** Next.js 14, TypeScript, Tailwind CSS
+- **Visualization:** Recharts
+- **Data Processing:** Python 3.14, Pandas, Jupyter
+- **API Integration:** Elexon BMRS API
+
+## 📂 Directory Structure
+- `/app`: Next.js frontend with real-time MAE calculation and interactive charts.
+- `/lib`: Core business logic for forecast horizon filtering and data normalization.
+- `/public/data`: Flattened CSV datasets (Actuals and Forecasts) for Jan 2024.
+- `/analysis`: 
+    - `fetch_data.py`: Automated ETL script to pull and flatten BMRS API data.
+    - `wind_analysis.ipynb`: Statistical analysis of error metrics and grid reliability.
+
+## 📈 Analysis Summary
+Located in `/analysis/wind_analysis.ipynb`, the study reveals:
+- **Error Scaling**: A clear linear correlation between forecast horizon and Mean Absolute Error (MAE).
+- **Reliability Recommendation**: Based on a 5th-percentile Cumulative Distribution Function (CDF) analysis, we recommend a reliable baseline of **[Insert MW from your notebook] MW**. This value represents the generation floor maintained 95% of the time during peak winter volatility.
+
+## ⚙️ Setup Instructions
+1. **Clone & Install**:
+   ```bash
+   git clone <repo-link>
+   npm install
+
+Update Data (Optional):
+
+Bash
+
+source venv/bin/activate
+python3 analysis/fetch_data.py
+Run Locally:
+
+Bash
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
