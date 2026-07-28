@@ -2,9 +2,6 @@
 
 A comprehensive dashboard and analytical suite built to evaluate national-level wind power generation forecasts in the UK for January 2024.
 
-## 🚀 Live Demo
-- **App Link:** [Insert your Vercel/Heroku URL here]
-- **Demo Video:** [Insert your Unlisted YouTube Link here]
 
 ## 🛠 Tech Stack
 - **Frontend:** Next.js 14, TypeScript, Tailwind CSS
